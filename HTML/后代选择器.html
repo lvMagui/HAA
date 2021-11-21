@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>后代选择器</title>
+</head>
+<body>
+<div class="box">
+  <p>文本在一个 .box 中</p>
+</div>
+  <p>文本不在 .box 中</p>
+<hr/>
+<ul>
+  <li>Unordered item</li>
+  <li>
+    Unordered item
+    <ol>
+      <li>Item 1</li>
+      <li>Item 2</li>
+    </ol>
+  </li>
+</ul>
+</body>
+<style id="box">
+  .box p{
+    color: red;
+  }
+
+  ul > li{
+    border-top: 5px solid red ;
+  }
+</style>
+</html>

@@ -1,0 +1,152 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+body{
+    background: #CCCCCC;
+}
+
+#head{
+    height:105px;
+    margin: 0 auto;
+    text-align: center;
+    background: #FFFFFF;
+}
+#nav{
+    background: url("images/navbg1.jpg");
+}
+
+.nav_Menu{
+    width: 1000px;
+    height: 35px;
+    margin: 0 auto;
+}
+.nav_Menu li{
+    list-style: none;
+    float: left;
+    line-height: 35px;
+}
+.nav_Menu li a{
+    display: block;
+    text-decoration: none;
+    font-weight: 700;
+    width: 125px;
+    height: 35px;
+    color: #FFF;
+    text-align: center;
+}
+.nav_Menu li a:hover{
+    background: url("images/navbg2.jpg");
+}
+#content{
+    background-color: #CCC;
+}
+.con_bg{
+    width: 1000px;
+    margin: 0 auto;
+
+}
+.con_news{
+    width: 1000px;
+    margin:  20px auto;
+    background: #FFF;
+    box-shadow: 1px 1px 5px dimgrey ;
+}
+.con_news:after{
+    content: "";
+    display: block;
+    clear: both;
+}
+.con_news_left{
+    display: inline;
+    float: left;
+}
+.con_news_left::after{
+    content: "";
+    display: block;
+    clear: left;
+}
+
+#news_left{
+    list-style: url("images/arror.gif");
+    width: 215px;
+    padding: 0 0 0 25px;
+}
+
+
+.con_news_left span{
+    display: block;
+    width: 215px;
+    font-weight: bold;
+    font-size: 16px;
+    margin: 5px;
+
+}
+.con_news_left img{
+    width: 234px;
+    height: auto;
+    margin-top: 0px;
+}
+#news_left li{
+    width: 215px;
+    border-bottom: 1px dashed #696969;
+    font-size: 12px;
+    line-height: 25px;
+    font-family: "宋体";
+    color: #696969;
+}
+.con_news_right{
+    display: inline;
+    width: 730px;
+    float: left;
+    margin-left: 30px;
+}
+
+#news_right li{
+    height: 29px;
+    list-style: url("images/dot.gif");
+    border-bottom:1px dashed #e8e8e8;
+    margin-right: 10px;
+    font-size: 14px;
+    font-family: "FangSong_GB2312";
+    color: black;
+    line-height: 29px;
+}
+.con_news_right span{
+    display: block;
+    font-size: 10px;
+    color: black;
+    line-height: 30px;
+}
+
+.h2{
+    font-size: 16px;
+    line-height: 15px;
+    margin: 5px;
+}
+.img{
+
+    display: block;
+    margin: 3px;
+    height: 100%;
+}
+.chengfeng{
+    width: 232px;
+    border: 2px solid black;
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+}
+.footer{
+    background: url("images/navbg2.jpg") repeat-x;
+    height: 10px;
+}
+.banquan{
+    text-align: center;
+    font-size: 14px;
+    margin: 25px;
+
+}
+.banquan p{
+    line-height: 20px;
+}
