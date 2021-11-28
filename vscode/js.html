@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>Title</title>
+	<style type="text/css">
+		#box {
+			width: 100px;
+			height: 100px;
+			border: 4px solid black;
+			border-style: outset;
+			box-shadow: 10px 10px 20px #696969;
+		}
+
+		#maskBox {
+			width: 400px;
+			height: 200px;
+			border: 6px solid #696969;
+			border-style: outset;
+			box-shadow: 0px 0px 20px #000000;
+			margin: auto;
+			display: none;
+
+		}
+
+		#tips {
+			display: inline-block;
+		}
+
+		ul {
+			text-align: center;
+			margin: auto 0;
+		}
+
+		ul li {
+			list-style: none;
+			font-size: 14px;
+			line-height: 30px;
+			margin: 10px 0;
+		}
+
+		ul .color span {
+			display: inline-block;
+			width: 30px;
+			height: 30px;
+			border: 2px solid black;
+			text-align: center;
+			margin: 0 5px;
+			font-size: 14px;
+			color: #7f7d7c;
+
+		}
+
+		.red {
+			background-color: red;
+
+		}
+
+		.blue {
+			background-color: blue;
+		}
+
+		.yello {
+			background-color: yellow;
+		}
+
+		ul .width span {
+			display: inline-block;
+			width: 30px;
+			background-color: #efefef;
+			height: 30px;
+			border: 2px solid black;
+			text-align: center;
+			margin: 0 5px;
+		}
+
+		.red::after {
+			content: '红';
+		}
+
+		.blue::after {
+			content: '蓝';
+		}
+
+		.yello::after {
+			content: '黄';
+		}
+
+		#btn {
+			display: inline-block;
+			width: 400px;
+			height: 23px;
+			text-align: center;
+		}
+
+		#btn .ok,
+		.rec {
+			margin-top: 10px;
+
+		}
+	</style>
+</head>
+
+<body>
+
+	<p id="tips">请为下面的div设置样式：</p>
+	<button id="BTN">点击设置</button>
+
+	<div id="box">
+	</div>
+	<div id="BOX">
+		<div id="maskBox">
+			<ul>
+				<li class="color">请选div的择背景颜色：<span id="red" class="red"></span><span id="blue"
+						class="blue"></span><span id="yellow" class="yello"></span></li>
+				<li class="width">请选择div的宽（px）：<span id="w2">200</span><span id="w3">300</span><span id="w4">400</span>
+				</li>
+				<li class="width">请选择div的高（px）：<span id="h2">200</span><span id="h3">300</span><span id="h4">400</span>
+				</li>
+			</ul>
+			<div id="btn">
+				<button id="rec" class="rec">恢复</button>
+				<button id="ok" class="ok">确认</button>
+			</div>
+		</div>
+	</div>
+
+
+	<script>
+		var red = document.getElementById('red');
+		var blue = document.getElementById('blue');
+		var yello = document.getElementById('yello');
+		var box = document.getElementById('box');
+		var ok = document.getElementById('ok');
+		var rec = document.getElementById('rec');
+		let w2 = document.getElementById('w2');
+		let w3 = document.getElementById('w3');
+		let w4 = document.getElementById('w4');
+		var color,
+			width,
+			height;
+		var BTN = document.getElementById('BTN'),
+			maskBox = document.getElementById('maskBox');
+
+
+		//更改背景颜色选项
+		red.onclick = function () {
+			color = red.id;
+			red.style.cssText = 'box-shadow:0px 0px 10px #000000';
+			blue.style.cssText = 'box-shadow:0px 0px  #000000';
+			yellow.style.cssText = 'box-shadow:0px 0px  #000000';
+		}
+		blue.onclick = function () {
+			color = blue.id;
+			blue.style.cssText = 'box-shadow:0px 0px 10px #000000';
+			red.style.cssText = 'box-shadow:0px 0px  #000000';
+			yellow.style.cssText = 'box-shadow:0px 0px  #000000';
+		}
+		yellow.onclick = function () {
+			color = yellow.id;
+			yellow.style.cssText = 'box-shadow:0px 0px 10px #000000';
+			red.style.cssText = 'box-shadow:0px 0px  #000000';
+			blue.style.cssText = 'box-shadow:0px 0px  #000000';
+		}
+
+		//更改div背景颜色
+		function bgColor() {
+			box.style.background = color;
+		}
+		//更改div宽
+		function Width() {
+			box.style.width = width;
+		}
+		//更改div高
+		function Height() {
+			box.style.height = height;
+		}
+		//确认按钮
+		ok.onclick = function () {
+			bgColor();
+			Width();
+			Height();
+		}
+
+		//恢复按钮
+		rec.onclick = function () {
+			box.style.cssText = 'background:none;width:100px;height:100px';
+			noShadow();
+		}
+		//恢复已选反馈
+		function noShadow() {
+			let arr1 = document.querySelectorAll('ul .color span'),
+				arr2 = document.querySelectorAll('ul .width span');
+			for (let i = 0; i < arr1.length; i++) {
+				arr1[i].style.boxShadow = '0px 0px black';
+			}
+			for (let i = 0; i < arr2.length; i++) {
+				arr2[i].style.boxShadow = '0px 0px black';
+			}
+		}
+
+		//选择宽
+		w2.onclick = function () {
+			width = w2.innerHTML + 'px';
+			w2.style.boxShadow = '0px 0px 10px #000000';
+			w3.style.cssText = 'box-shadow:0px 0px  #000000';
+			w4.style.cssText = 'box-shadow:0px 0px  #000000';
+		}
+		w3.onclick = function () {
+			width = w3.innerHTML + 'px';
+			w3.style.boxShadow = '0px 0px 10px #000000';
+			w2.style.cssText = 'box-shadow:0px 0px  #000000';
+			w4.style.cssText = 'box-shadow:0px 0px  #000000';
+		}
+		w4.onclick = function () {
+			width = w4.innerHTML + 'px';
+			w4.style.boxShadow = '0px 0px 10px #000000';
+			w2.style.cssText = 'box-shadow:0px 0px  #000000';
+			w3.style.cssText = 'box-shadow:0px 0px  #000000';
+		}
+		//选择高
+		h2.onclick = function () {
+			height = h2.innerHTML + 'px';
+			h2.style.boxShadow = '0px 0px 10px #000000';
+			h3.style.cssText = 'box-shadow:0px 0px  #000000';
+			h4.style.cssText = 'box-shadow:0px 0px  #000000';
+		}
+		h3.onclick = function () {
+			height = h3.innerHTML + 'px';
+			h3.style.boxShadow = '0px 0px 10px #000000';
+			h2.style.cssText = 'box-shadow:0px 0px  #000000';
+			h4.style.cssText = 'box-shadow:0px 0px  #000000';
+		}
+		h4.onclick = function () {
+			height = h4.innerHTML + 'px';
+			h4.style.boxShadow = '0px 0px 10px #000000';
+			h2.style.cssText = 'box-shadow:0px 0px  #000000';
+			h3.style.cssText = 'box-shadow:0px 0px  #000000';
+		}
+		BTN.onclick = function () {
+			maskBox.style.display = 'block';
+		}
+
+	</script>
+
+</body>
+
+</html>

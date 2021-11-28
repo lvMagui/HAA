@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>实践</title>
+    <style>
+        #text {
+            width: 500px;
+            height: 200px;
+            border: 2px solid black;
+            margin-bottom: 20px;
+            white-space: pre;
+        }
+
+        #output {
+            width: 500px;
+            height: 500px;
+            border: 2px solid black;
+            margin-bottom: 20px;
+            white-space: pre;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <textarea id="text"></textarea>
+    </div>
+    <div id="output">
+        <ul id="list">
+
+        </ul>
+    </div>
+    <script>
+        var text = document.getElementById('text');
+        var ouput = document.getElementById('output');
+        var list = document.getElementById('list');
+
+        //声明正则表达式
+        var regexp = /\W+/m;
+
+
+    </script>
+</body>
+
+</html>

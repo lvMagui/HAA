@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>反向引用</title>
+</head>
+
+<body>
+    <script>
+        /* 
+            在字符模式中，后面的字符可以引用前面的子表达式。实现方法如下：
+            \+ 数字
+            数字指定了子表达式在字符模式中的顺序。如“\1”引用的是第 1 个子表达式，“\2”引用的是第 2 个子表达式。
+            var s = "<h1>title<h1><p>text<p>";
+            var r = /(<\/?\w+>)\1/g;
+            var a = s.match(r);  //返回数组["<h1>title<h1>","<p>text<p>"]
+            console.log(a);
+        */
+
+        /* 
+            由于子表达式可以相互嵌套，它们的顺序将根据左括号的顺序来确定。例如，下面示例定义匹配模式包含多个子表达式。
+            var s = "abc";
+            var r = /(a(b(c)))/;
+            var a = s.match(r);  //返回数组["abc","abc","bc","c"]
+        */
+        var s = "abc";
+        var r = /(a(b(c)))/;
+        var a = s.match(r);  //返回数组["abc","abc","bc","c"]
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .wrap {
+            width: 350px;
+            height: 600px;
+            /* background-color: #f97a75;
+            border-radius: 8px; */
+        }
+
+        .title,
+        .list {
+            background-color: #f97a75;
+            border-radius: 8px;
+        }
+
+        .title {
+            width: 350px;
+            height: 100px;
+            color: white;
+            font-size: 30px;
+            line-height: 100px;
+            text-align: center;
+            position: relative;
+            top: 20px;
+        }
+
+        .title img {
+            float: right;
+            margin: 34px 20px 34px 0px;
+        }
+
+        .list {
+            margin: 20px 10px 10px 10px;
+            padding: 0;
+
+        }
+
+        .List {
+            background-color: #f97a75;
+            border-radius: 0 0 8px 8px;
+            height: 520px;
+            margin-top: 0;
+            position: relative;
+            top: -8px;
+            /* display: none; */
+        }
+
+        .list li {
+            width: 330px;
+            height: 90px;
+            background-color: #fee3e3;
+            list-style: none;
+            font-size: 30px;
+            line-height: 90px;
+            border-radius: 20px;
+            margin: 10px 0;
+        }
+
+        .weibo::before {
+            content: url(images/weibo.png);
+            text-align: left;
+            margin: 0 30px;
+        }
+
+        .tupian::before {
+            content: url('images/图片.png');
+            text-align: left;
+            margin: 0 30px;
+        }
+
+        .boke::before {
+            content: url('images/博客园.png');
+            text-align: left;
+            margin: 0 30px;
+        }
+
+        .shiping::before {
+            content: url("images/视频.png");
+            text-align: left;
+            margin: 0 30px;
+        }
+
+        .more::before {
+            content: url("images/更多.png");
+            text-align: left;
+            margin: 0 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="title">
+            菜单
+            <img id="btn" src="images/down.png">
+        </div>
+        <div id="List" class="List">
+            <ul class="list">
+                <li class="weibo">微博</li>
+                <li class="tupian">图片</li>
+                <li class="boke">博客</li>
+                <li class="shiping">视频</li>
+                <li class="more">更多>></li>
+            </ul>
+        </div>
+
+    </div>
+    <script>
+        'use strict'
+        var btn = document.getElementById('btn');
+        var List = document.getElementById('List');
+        btn.onclick = function () {
+
+            if (List.style.display == 'none') {
+                List.style.display = 'block';
+            } else {
+                List.style.display = 'none';
+            }
+            console.log(List.style.display);
+
+        }
+    </script>
+</body>
+
+</html>
