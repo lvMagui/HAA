@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>图片轮播</title>
+    <style>
+        body {}
+
+        #box {
+            width: 980px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+        }
+
+        #image {
+            display: inline-block;
+        }
+
+        #lunbo {
+
+            width: 500px;
+            height: 230px;
+            border: 5px solid burlywood;
+            padding: 10px;
+            box-shadow: 0px 0px 10px 1px black;
+
+        }
+
+        h1 {
+            display: inline-block;
+            line-height: 230px;
+            height: 230px;
+            position: absolute;
+            margin: 15px 0;
+            top: 0;
+        }
+
+        .img {
+            margin-left: -32px;
+        }
+
+        #right,
+        #left {
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box">
+        <h1 class="img"><img id="right" src="images/向左1.png" alt="#"></h1>
+        <div id="image">
+            <img id="lunbo" src="images/1.jpg" alt="#">
+        </div>
+        <h1><img id="left" src="images/向右1.png" alt="#"></h1>
+    </div>
+
+    <script>
+        var img = document.getElementById('lunbo');
+        var next = document.getElementById('left');
+        var prev = document.getElementById('right');
+
+        var arr = ["images/1.jpg", "images/2.jpg", "images/3.jpg", "images/4.jpg", "images/5.jpg"];
+        var num = 0;
+        next.onclick = function () {
+            num++;
+            if (num == arr.length) {
+                num = 0;
+            }
+            lunbo.src = arr[num];
+
+        }
+        prev.onclick = function () {
+            num--;
+            if (num < 0) {
+                num = arr.length - 1;
+            }
+            console.log(num);
+            lunbo.src = arr[num];
+
+        }
+    </script>
+</body>
+
+</html>
