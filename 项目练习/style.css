@@ -1,0 +1,42 @@
+*{
+    /* 将边框和边距包括在元素的总宽高中 */
+    box-sizing: border-box;
+}
+body{
+    font-family: "黑体";
+    /* 设置浏览器的布局方式为弹性布局(容器) --设为Flex布局以后，子元素的float、clear和vertical-align属性将失效 */
+    display: flex;
+    /* 让元素沿垂直主轴从上到下垂直排列 */
+    flex-direction: column;
+    /* 为弹性容器内的项目指定中心（默认）对齐方式 */
+    align-items: center;
+    /* 
+        对齐弹性容器的项目 --center 项目位于容器中央。
+                        --flex-start 项目位于容器的开头
+                        --flex-end 项目位于容器的结尾
+                        --space-berween 项目在行与行之间留有间隔
+                        --space-around 项目在行之前、之间和之后留有空间
+                        --intiial 将此属性设为默认值
+                        --inherit 从其中父元素继承此属性
+    */
+    justify-content: center;
+    overflow: hidden;
+    /* 视口单位 浏览器内部的可视区域大小
+     --vh：高度 1vh等于视口高度的1%
+    --vw：宽度 1vw等于视口宽度的1%
+     */
+    height: 100vh;
+    margin: 0;
+    /* 
+        设置背景图像的起始位置
+        --如果仅规定了一个关键词，那么第二个值将是"center"
+     */
+    background-position: center center;
+    background-size: cover;
+    /* 过渡效果设置
+            --property 规定过渡效果的css名称
+            --duration 规定完成过渡效果需要多少秒或毫秒 <必须设置>
+            --timing-function 规定速度效果的速度曲线
+            --delay 定义过渡效果合适开始  */
+    transition: 0.4s;
+}
