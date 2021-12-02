@@ -34,9 +34,101 @@ body{
     background-position: center center;
     background-size: cover;
     /* 过渡效果设置
-            --property 规定过渡效果的css名称
+        总写语法：transition: property duration timing-function delay;
+            --property 默认值（all） 规定过渡效果的css名称
             --duration 规定完成过渡效果需要多少秒或毫秒 <必须设置>
-            --timing-function 规定速度效果的速度曲线
-            --delay 定义过渡效果合适开始  */
+            --timing-function 默认值(ease-慢快慢)规定速度效果的速度曲线  语法：transition-timing-function: linear|ease|ease-in|ease-out|ease-in-out|cubic-
+bezier(n,n,n,n);
+            --delay 定义过渡效果何时开始  语法：transition-delay: time;
+        
+    */
     transition: 0.4s;
+    
 }
+
+body::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.16),0 3px 6px rgba(0, 0, 0, 0.23);
+    z-index: -1;
+}
+.box{
+    /* 
+        RGBA 颜色 
+            --RGBA 颜色值是这样规定的：rgba(red, green, blue, alpha)
+            -- alpha 参数是介于 0.0（完全透明）和 1.0（完全不透明）之间的数字
+            --HSL 指的是色相、饱和度和亮度（Hue、Saturation 以及 Lightness）
+            --CSS opacity 属性设置整个元素的不透明度(包括文本和颜色)
+     */ 
+    box-shadow: 0 3px 6px rgba(0, 0, 0,0.16),0 3px 6px rgba(0, 0, 0, 0,0.23);
+    height: 70vh;
+    width: 70vw;
+    position: relative;
+    overflow: hidden;
+}
+
+.slide {
+    opacity: 0;
+    height: 100vh;
+    width: 100vw;
+    background-position: center center;
+    background-size: cover;
+    position: absolute;
+    top:-15vh;
+    left: -15vw;
+    transition: 0.4s ease;
+    z-index: -1;
+}
+
+.slide.active{
+    opacity: 1;
+}
+
+.arrow {
+    position: fixed;
+    /* 
+        background-color: transparent(默认值);
+        尽管在大多数情况下，没有必要使用 transparent。不过如果您不希望某元素拥有背景色，
+      同时又不希望用户对浏览器的颜色设置影响到您的设计，那么设置 transparent 值还是有必要的。
+    */
+    background-color: transparent;
+    color: #fff;
+    padding: 20px;
+    font-size: 30px;
+    border: 2px solid orange;
+    top: 50%;
+    /* 
+          transform
+         属性向元素应用 2D 或 3D 转换。该属性允许我们对元素进行旋转、缩放、移动或倾斜。
+        语法;transform: none|transform-functions;
+    */
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+.arrow:focus{
+    /* 
+        outline 
+        轮廓 是绘制于元素周围的一条线，位于边框边缘的外围，可起到突出元素的作用。
+        --outline-color 规定边框的颜色
+        --outline-style 规定边框样式
+        --outline-width 规定边框的宽度
+        --inherit 规定应该从父元素继承 outline 属性的设置。
+    */
+    outline: 0;
+}
+
+.left-arrow{
+    /* 
+        calc() 函数用于动态计算长度值;
+        简单来说能让你给元素的做计算
+    */
+    left:  calc(15vw - 65px);
+}
+.right-arrow {
+    right: calc(15vw - 65px);
+  }

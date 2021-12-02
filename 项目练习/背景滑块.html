@@ -7,19 +7,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>背景滑块</title>
     <link rel="stylesheet" href="style.css" type="text/css">
-    <script src="script.js"></script>
+
 </head>
 
 <body>
     <div class="box">
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <button class="right"></button>
-        <button class="left"></button>
+        <div class="slide active" style="background: url(images/bg1.jfif);"></div>
+        <div class="slide" style="background: url(images/bg2.jfif);"></div>
+        <div class="slide" style="background: url(images/bg3.jfif);"></div>
+        <div class="slide" style="background: url(images/bg4.jfif);"></div>
+        <div class="slide" style="background: url(images/bg5.jfif);"></div>
+        <button class="arrow left-arrow arrow" id="left">
+            <i class="fas fa-arrow-right"></i>
+        </button>
+        <button class="arrow right-arrow arrow" id="right">
+            <i class="fas fa-arrow-right"></i>
+        </button>
     </div>
+    <script src="script.js"></script>
 </body>
 
 </html>
